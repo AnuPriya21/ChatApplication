@@ -1,0 +1,25 @@
+{% extends "user/base.html" %}
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% block reg %}
+            {{ block.super }}
+        {% endblock %}
+        {% block css %}
+            {{ block.super }}
+        {% endblock %}
+        
+        
+    </head>
+    <body> 
+        {% block messages %}
+            {{ block.super }}
+        {% endblock %}
+        
+        {% block form %}
+            {{ block.super }}
+        {% endblock%}
+</body>
+
+</html>
