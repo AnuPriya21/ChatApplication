@@ -10,12 +10,12 @@ h1 {
 div {
     font-size: 20; opacity: 10 ; color: rgb(21, 24, 24) 
 }
-#pass{
+#password{
     font-size:20; color: white; border: 1.8px solid rgb(153, 144, 144); background-color: rgb(195, 189, 189)
 }
 
-#user{
-    font-size:20; color: rgb(24, 23, 23) ;border: 1.8px solid rgb(153, 144, 144); background-color: rgb(195, 189, 189)
+#username{
+    font-size:20; color: rgb(24, 23, 23) ;border: 1.8px solid rgb(153, 144, 144); background-color: rgb(155, 99, 99)
 }
 
 #button{
