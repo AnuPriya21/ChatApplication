@@ -49,7 +49,7 @@ class Login(GenericAPIView):
         else:
             messages.error(request, 'Invalid Username or Password')
             print("Invalid Credentials")
-        return redirect("/Login/")
+        return redirect("/")
 
 class Registrations(GenericAPIView):
     
@@ -70,7 +70,7 @@ class Registrations(GenericAPIView):
         if password == password1:
             print("hi")
             user = User.objects.create_user(email=email,username=username, password=password)
-            user.save()
+            user.save() 
             print("Registered Successfully")
             token = token_activation(username, password)
             print('return from tokens.py:', token)
