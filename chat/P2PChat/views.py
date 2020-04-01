@@ -24,7 +24,7 @@ def user_list(request,pk=None):
             user = User.objects.create_user(username=data['username'], password=data['password'])
             UserProfile.objects.create(user=user)
             return JsonResponse(data, status=201)
-        except Exception:
+        except Exception: 
             return JsonResponse({'error': "Something went wrong"}, status=400)
 
 
@@ -55,7 +55,9 @@ def chat_view(request):
         return render(request, 'chat/chat.html',
                       {'users': User.objects.exclude(username=request.user.username)})
 
-
+    if request.method == "POST":
+        return HttpResponse('Message')
+        
 def message_view(request, sender, receiver):
   
     if not request.user.is_authenticated:
