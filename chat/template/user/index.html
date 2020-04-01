@@ -1,57 +1,52 @@
-{% load static %} 
-  <!DOCTYPE html>
-  <html>
+{% load static %}
+<!DOCTYPE html>
+<html>
     <head>
-     
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-       
-        <link type="text/css" rel="stylesheet" href="{% static 'styles/materialize.min.css' %}"  media="screen,projection"/>
-        <link type="text/css" rel="stylesheet" href="{% static 'styles/materialize.css' %}"  media="screen,projection"/>
-        <link type="text/css" rel="stylesheet" href="{% static 'style/style.css' %}"  media="screen,projection"/>
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>
+        {% block css %}
+            <link rel = "stylesheet" type="text/css" href="{% static 'style/user.css' %}"/>
+            <link rel = "stylesheet" type="text/css" href="{% static 'style/style.css' %}"/>
+            <link rel = "stylesheet" type="text/css" href="{% static 'style/meterialize.css' %}"/>
+            <link rel = "stylesheet" type="text/css" href="{% static 'style/meterialize.min.css' %}"/>
+        {% endblock %}
 
-        <script type="text/javascript" src="{% static 'js/chat.js' %}"></script>
-        
-        <title>login page</title>
-        <link rel = "stylesheet" type="text/css" href="{% static 'style/user.css' %}"/>
+        {% block chat %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="{% static 'js/meterialize.js' %}"></script>
+            <script src="{% static 'js/materialize.min.js' %}"></script>            
+            <script src="{% static 'js/chat.js' %}"></script>
+        {% endblock %}
     </head>
     <body>
-    {% block body %}
+
+    {% block body%}
        
-            <div class="row">
-            <div class="col s12 m8 l6 offset-m2 offset-l3">
+        <div class="row">
+        <div class="col s12 m8 l6 offset-m2 offset-l3">
              
-                <div>
-                    {% block form %}
+            <div>
+                {% block form %}
                     
-                    <h1>Chat App</h1><br><br>
-                    <form action="" name="loginform" method="POST" onsubmit="return validate();">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <input type="text" name="username" id="username" tabindex="2" class="form-control" placeholder="Username" value="">
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" value="">
-                        </div>
-                        <br><br>
+                <h1>Chat App</h1><br><br>
+                <form action="" name="loginform" method="POST" onsubmit="return validate();">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" name="username" id="username" tabindex="2" class="form-control" placeholder="Username" value="">
+                    </div><br>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" value="">
+                    </div><br><br>
                         
-                        <button onclick="validate()" id="button" >Submit</button><br><br>
-                           <a href="/registration">Register!</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="/forgot_password">Forgot password?</a>
-                    </form>
-                    {% endblock %}
-                </div>
-            </div>
-            </div>
+                    <button onclick="validate()" id="button" >login</button><br><br>
+                    <a href="/forgot_password">Forgot password?</a><br><br>
+                    <a>New to chatapp?   </a><a href= "/registration">Signup</a>
+                </form> 
+                {% endblock %}
             </div>
         </div>
+        </div>
+        
       
-     <script>
+    <script>
             function validate(){
                 var username = document.forms["loginform"]["username"].value;
                 var password = document.forms["loginform"]["password"].value;
@@ -60,8 +55,7 @@
                     alert("Username/password cannot be empty")
                     return false;
                 }
-            
-        </script>
-        {% endblock %}
+    </script>
+    {% endblock %}
     </body>
-  </html>
+</html>
