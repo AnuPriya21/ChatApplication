@@ -3,12 +3,12 @@
 {% load static %} 
 
 <nav class="purple">
-    {% comment %} <div class="nav-wrapper"> {% endcomment %}
-      <a href="#" class="brand-logo">Chat App</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="">{{ request.user.username }}</a></li>
-          <li><a href="{% url 'logout' %}">Logout</i></a></li>
-      </ul>
+    <div class="nav-wrapper"> 
+        <a href="#" class="brand-logo">Chat App</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="">{{ request.user.username }}</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
     </div>
 </nav>
     <div class="section" style="height: 80vh" >
@@ -22,13 +22,13 @@
         </div>
         <div class="col s9">
             <div class="card">
-            <div id="board" class="section grey"  style="height: 68vh; padding: 5px; overflow-y: scroll">
+            <div id="board" class="lighten grey"  style="height: 68vh; padding: 5px; overflow-y: scroll">
                 {% block messages %}
 
                 {% endblock %}
             </div>
             <form id="chat-box" class="form-group {% block hide %}hide{% endblock %}" method="post">
-                {% comment %} {% csrf_token %} {% endcomment %}
+                {% csrf_token %}
                 <div class="row">
                     <div class="col s11">
                         <div class="input-field">
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="col s1" style="line-height: 80px">
-                        <button class="btn btn-floating green"><i class="material-icons">send</i></button>
+                        <button class="btn btn-floating green"><i class="material-icons right">send</i></button>
                     </div>
                 </div>
             </form>
@@ -46,12 +46,12 @@
     </div>
     {% load static %}
     <script>
-        // For receiving
+        // For receiving message
         sender_id = "{{ receiver.id }}";
         receiver_id = "{{ request.user.id }}";
         
         
-        //For sending
+        //For sending message
         $(function () {
             scrolltoend();
             $('#chat-box').on('submit', function (event) {
