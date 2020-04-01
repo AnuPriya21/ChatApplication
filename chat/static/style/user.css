@@ -1,5 +1,4 @@
 body {
-    background-color:whitesmoke;
     text-align: center;
     background-position:fixed;
     background-attachment: fixed;
@@ -10,14 +9,14 @@ h1 {
     font-size:50 ; font-style: italic; color:rgb(0, 0, 0); -webkit-text-stroke: 1px black
 }
 div {
-    font-size: 20; opacity: 10 ; color:rgb(209, 185, 185)
+    font-size: 20; opacity: 10 ; color:rgb(10, 1, 1)
 }
 #username{
-    font-size:20; color:  rgb(8, 8, 8); border: 1.8px solid  rgb(153, 144, 144); background-color: rgb(195, 189, 189)
+    font-size:20; color:  rgb(8, 8, 8); border: 1.8px solid  rgb(153, 144, 144); background-color: rgba(66, 64, 64, 0)
 }
 
 #password{
-    font-size:20; color:   rgb(8, 8, 8);border: 1.8px solid rgb(153, 144, 144); background-color: rgb(195, 189, 189)
+    font-size:20; color:   rgb(8, 8, 8);border: 1.8px solid rgb(153, 144, 144); background-color: rgb(66, 64, 64, 0z)
 }
 
 #button{
