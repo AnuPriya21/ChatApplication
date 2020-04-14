@@ -52,8 +52,7 @@ def chat_view(request):
     if not request.user.is_authenticated:
         return redirect('user/index')
     if request.method == "GET" :
-        return render(request, 'chat/chat.html',
-                      {'users': User.objects.exclude(username=request.user.username)})
+        return render(request, 'chat/chat.html')
 
     if request.method == "POST":
         return HttpResponse('Message')
