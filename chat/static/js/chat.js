@@ -10,7 +10,7 @@ const userDiv = (senderId, receiverId, name, online) =>
                     <img src="https://frontend-1.adjust.com/new-assets/images/site-images/interface/user.svg" class="col s2">
                     <div class="col s10">
                     <span class="title" style="font-weight: bolder">${name}</span>
-                    <span style="color: ${online ? 'green' : 'green'}; float: right">${online ? 'online' : 'online'}</span>
+                    
                     </div>
                 </a>`)
 
@@ -39,7 +39,7 @@ function receive() {
                 var box = text_box.replace('{sender}', data[i].sender);
                 box = box.replace('{message}', data[i].message);
                 box = box.replace('right', 'left blue lighten-5');
-                $('#board').append(box);
+                $('#  n').append(box);[]
                 scrolltoend();
             }
         }
@@ -58,7 +58,7 @@ function getUsers(senderId, callback) {
                     console.log("userDiv : " + senderId);
                     return [userDiv(senderId, user.id, user.username, user.online), ...res]
                 }
-            }, [])
+            }, [])  
             callback(doc)
         }
     })
